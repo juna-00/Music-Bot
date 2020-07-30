@@ -1,9 +1,9 @@
 {
-  "token": "NzI4NjY0NjQ0OTEwMzE3NjY4.Xv9r1Q.CGnrVRBCNd3fyikcXtxZMIQCGUY",
-  "ytapikey": "AIzaSyBRXkk2RloKy_FMdNX7hlGOvRMtoNn4wgQ",
-  "ownerid": "685006742249406524",
+  "token": "token",
+  "ytapikey": "ytapi",
+  "ownerid": "yuuid",
   "defaultSettings": {
-    "prefix": "-",
+    "prefix": "prefix",
     "ratelimit": false,
     "djonly": false,
     "djrole": "dj",
