@@ -7,19 +7,19 @@ const perpage = 10;
 class Help extends Command {
   constructor(client) {
     super(client, {
-      name: 'help',
+      name: 'help-music',
       description: 'Get help on a command or a command category,',
       category: 'System',
-      usage: 'help <category/command> [page-num]',
+      usage: 'help-music <category/command> [page-num]',
       cooldown: 5,
-      aliases: ['h', 'halp', 'commands']
+      aliases: ['hm', 'halp-music']
     });
   }
 
   async run(message, [type, page=1]) {
     let num = 0;    
     if (type) type = type.toLowerCase();
-    const helpembed = new MessageEmbed()
+    const help-musicembed = new MessageEmbed()
       .setTimestamp()
       .setColor(message.guild.me.roles.highest.color || 0x00AE86)
       .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
@@ -37,13 +37,13 @@ class Help extends Command {
       }
     
       if (num) {
-        helpembed.setTitle(`Page ${page}/${Math.ceil(num / perpage)}`)
+        help-musicembed.setTitle(`Page ${page}/${Math.ceil(num / perpage)}`)
           .addField('Commands', output);
       }
     }
     if (this.client.commands.has(type) || this.client.aliases.has(type)) {
       const cm = this.client.commands.get(type) || this.client.aliases.get((type));
-      helpembed.setTitle(cm.name)
+      help-musicembed.setTitle(cm.name)
         .addField('Command Description', cm.description)
         .addField('Extended Description', cm.extended)
         .addField('Command Usage', `\`${cm.usage}\``)
